@@ -5,10 +5,11 @@
 ** Login   <wroble_h@epitech.net>
 ** 
 ** Started on  Wed May  6 19:53:35 2015 Hubert Wroblewski
-** Last update Wed May  6 20:40:09 2015 Hubert Wroblewski
+** Last update Wed May  6 20:43:50 2015 Pierre Lefebvre
 */
 
 #include <stdlib.h>
+#include "braille.h"
 
 static char	*my_strcpy(char *src, char *dest)
 {

@@ -5,7 +5,7 @@
 ## Login   <wroble_h@epitech.net>
 ## 
 ## Started on  Wed May  6 18:58:38 2015 Hubert Wroblewski
-## Last update Wed May  6 19:21:10 2015 Hubert Wroblewski
+## Last update Wed May  6 20:41:50 2015 Pierre Lefebvre
 ##
 
 CC	= gcc
@@ -14,8 +14,9 @@ RM	= rm -f
 
 NAME	= braille
 
-SRCS	= main.c \
-	str.c
+SRCS	= str.c \
+	trans_braille.c \
+	my_realloc.c 
 
 OBJS	= $(SRCS:.c=.o)
 

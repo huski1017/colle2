@@ -5,17 +5,18 @@
 ** Login   <lefebv_5@epitech.net>
 ** 
 ** Started on  Wed May  6 18:59:43 2015 Pierre Lefebvre
-** Last update Wed May  6 19:20:53 2015 Hubert Wroblewski
+** Last update Wed May  6 20:21:08 2015 Pierre Lefebvre
 */
 
 #include <unistd.h>
+#include "braille.h"
 
 void	my_putchar(char c)
 {
   (void)write(1, &c, 1);
 }
 
-int	my_strlen(char str)
+int	my_strlen(char *str)
 {
   int	i;
 
