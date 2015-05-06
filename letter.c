@@ -5,8 +5,10 @@
 ** Login   <wroble_h@epitech.net>
 ** 
 ** Started on  Wed May  6 21:45:04 2015 Hubert Wroblewski
-** Last update Wed May  6 22:01:31 2015 Hubert Wroblewski
+** Last update Wed May  6 22:03:49 2015 Hubert Wroblewski
 */
+
+#include <stdlib.h>
 
 int	find_letter(char **str, char c)
 {

@@ -4,9 +4,10 @@
 ## Made by Hubert Wroblewski
 ## Login   <wroble_h@epitech.net>
 ## 
-## Started on  Wed May  6 18:58:38 2015 Hubert Wroblewski
-## Last update Wed May  6 22:01:54 2015 Hubert Wroblewski
+## Started on  Wed May  6 22:03:10 2015 Hubert Wroblewski
+## Last update Wed May  6 22:03:16 2015 Hubert Wroblewski
 ##
+
 
 CC	= gcc
 
@@ -35,4 +36,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean flcean re
+.PHONY: all clean fclean re
