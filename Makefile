@@ -5,7 +5,7 @@
 ## Login   <wroble_h@epitech.net>
 ## 
 ## Started on  Wed May  6 22:03:10 2015 Hubert Wroblewski
-## Last update Wed May  6 22:03:16 2015 Hubert Wroblewski
+## Last update Wed May  6 22:11:13 2015 Hubert Wroblewski
 ##
 
 
@@ -19,7 +19,8 @@ SRCS	= str.c \
 	trans_braille.c \
 	my_realloc.c \
 	letter.c \
-	check_maj.c
+	check_maj.c \
+	print_letter.c
 
 OBJS	= $(SRCS:.c=.o)
 

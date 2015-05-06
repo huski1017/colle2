@@ -5,10 +5,10 @@
 ** Login   <wroble_h@epitech.net>
 ** 
 ** Started on  Wed May  6 22:04:08 2015 Hubert Wroblewski
-** Last update Wed May  6 22:07:23 2015 Hubert Wroblewski
+** Last update Wed May  6 22:10:55 2015 Hubert Wroblewski
 */
 
-int	print_letter(char *str)
+int	print_letter(char *str, int maj)
 {
   int	i;
 
@@ -19,6 +19,10 @@ int	print_letter(char *str)
     }
   if (str[i] == '\0')
     return (-1);
+  if (maj == 1)
+    {
+      my_putstr("46-");
+    }
   while (str[i] != '\0')
     {
       my_putchar(str[i]);

@@ -5,7 +5,7 @@
 ** Login   <lefebv_5@epitech.net>
 ** 
 ** Started on  Wed May  6 19:37:30 2015 Pierre Lefebvre
-** Last update Wed May  6 21:44:55 2015 Hubert Wroblewski
+** Last update Wed May  6 22:14:16 2015 Hubert Wroblewski
 */
 
 #include <unistd.h>
@@ -63,18 +63,19 @@ int	print_braille(char **trans_braille, char *str)
 {  
   int	i;
   int	nb;
+  int	maj;
 
   i = 0;
   while (str[i] != '\0')
     {
       if (str[i] != ' ')
 	{
-	  check_maj(str, i);
+	  maj = check_maj(str, i);
 	  if ((nb = find_letter(trans_braille, str[i])) == -1)
 	    my_putstr("123456");
 	  else
 	    {
-	      if (print_letter(trans_braille[nb]) == -1)
+	      if (print_letter(trans_braille[nb], maj) == -1)
 		return (-1);
 	    }
 	  if (str[i + 1] != '\0' && str[i + 1] != ' ')
