@@ -5,7 +5,7 @@
 ## Login   <wroble_h@epitech.net>
 ## 
 ## Started on  Wed May  6 18:58:38 2015 Hubert Wroblewski
-## Last update Wed May  6 20:41:50 2015 Pierre Lefebvre
+## Last update Wed May  6 21:33:16 2015 Pierre Lefebvre
 ##
 
 CC	= gcc
@@ -33,4 +33,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean flcean re
+.PHONY: all clean fclean re
