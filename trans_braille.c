@@ -5,7 +5,7 @@
 ** Login   <lefebv_5@epitech.net>
 ** 
 ** Started on  Wed May  6 19:37:30 2015 Pierre Lefebvre
-** Last update Wed May  6 20:53:49 2015 Pierre Lefebvre
+** Last update Wed May  6 21:25:39 2015 Pierre Lefebvre
 */
 
 #include <unistd.h>
@@ -15,23 +15,18 @@
 #include <fcntl.h>
 #include "braille.h"
 
-char	**braille_tab(char **trans_braille, char **av)
+static char	**read_txt(char *buff, int fd, char **trans_braille)
 {
-  char	buff[1];
-  int	fd;
-  int	larg;
-  int	lon;
+  int		larg;
+  int		lon;
+  int		check_read;
 
   larg = 0;
   lon = 0;
-  if ((fd = open(av[2], S_IRUSR)) == -1)
-    return (NULL);
-  if ((trans_braille = malloc(sizeof(char *) * 128)) == NULL)
-    return (NULL);
-  if ((trans_braille[lon] = malloc(sizeof(char) * 4096)) == NULL)
-    return (NULL);
-  while (read(fd, buff, 1) != 0)
+  while ((check_read = read(fd, buff, 1)) != 0)
     {
+      if (check_read == -1)
+	return (NULL);
       if (buff[0] == '\n')
 	{
 	  lon = lon + 1;
@@ -39,13 +34,32 @@ char	**braille_tab(char **trans_braille, char **av)
 	    return (NULL);
 	  larg = 0;
 	}
-      if (buff[0] == '\0')
-	return (trans_braille);
       trans_braille[lon][larg] = buff[0];
       larg = larg + 1;
     }
   trans_braille[lon] = NULL;
+  return (trans_braille);
 }
+
+static char	**braille_tab(char **trans_braille, char **av)
+{
+  char		buff[1];
+  int		fd;
+
+  if ((fd = open(av[2], S_IRUSR)) == -1)
+    return (NULL);
+  if ((trans_braille = malloc(sizeof(char *) * 128)) == NULL)
+    return (NULL);
+  if ((trans_braille[0] = malloc(sizeof(char) * 4096)) == NULL)
+    return (NULL);
+  if ((trans_braille = read_txt(buff, fd, trans_braille)) == NULL)
+    return (NULL);
+}
+
+void	print_braille(char **trans_braille, char **av)
+
+  
+
 
 int	main(int ac, char **av)
 {
