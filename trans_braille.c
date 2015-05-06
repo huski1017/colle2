@@ -5,7 +5,7 @@
 ** Login   <lefebv_5@epitech.net>
 ** 
 ** Started on  Wed May  6 19:37:30 2015 Pierre Lefebvre
-** Last update Wed May  6 22:14:16 2015 Hubert Wroblewski
+** Last update Wed May  6 22:40:35 2015 Hubert Wroblewski
 */
 
 #include <unistd.h>
@@ -21,7 +21,7 @@ static char	**read_txt(char *buff, int fd, char **trans_braille)
   int		lon;
   int		check_read;
 
-  big = 0;
+  big = 1;
   lon = 0;
   while ((check_read = read(fd, buff, 1)) != 0)
     {
@@ -97,15 +97,17 @@ int	main(int ac, char **av)
       my_putstr("Error : Invalid number of arguments\n");
       return (-1);
     }
-  if (braille_tab(trans_braille, av) == NULL)
+  if ((trans_braille = braille_tab(trans_braille, av)) == NULL)
     {
       my_putstr("Error: 'braille_tab' failed\n");
       return (-1);
     }
+  trans_braille[0][0] = '\n';
   if (print_braille(trans_braille, av[1]) == -1)
     {
       my_putstr("Error : 'print_braille' failed.\n");
       return (-1);
     }
+  my_putchar('\n');
   return (0);
 }

@@ -5,8 +5,10 @@
 ** Login   <lefebv_5@epitech.net>
 ** 
 ** Started on  Wed May  6 21:45:59 2015 Pierre Lefebvre
-** Last update Wed May  6 22:05:51 2015 Pierre Lefebvre
+** Last update Wed May  6 22:42:58 2015 Hubert Wroblewski
 */
+
+#include "braille.h"
 
 int	    	check_maj(char *str, int i)
 {

@@ -5,8 +5,10 @@
 ** Login   <wroble_h@epitech.net>
 ** 
 ** Started on  Wed May  6 22:04:08 2015 Hubert Wroblewski
-** Last update Wed May  6 22:10:55 2015 Hubert Wroblewski
+** Last update Wed May  6 22:42:03 2015 Hubert Wroblewski
 */
+
+#include "braille.h"
 
 int	print_letter(char *str, int maj)
 {
@@ -17,6 +19,7 @@ int	print_letter(char *str, int maj)
     {
       i++;
     }
+  i++;
   if (str[i] == '\0')
     return (-1);
   if (maj == 1)
