@@ -5,7 +5,7 @@
 ** Login   <lefebv_5@epitech.net>
 ** 
 ** Started on  Wed May  6 21:45:59 2015 Pierre Lefebvre
-** Last update Wed May  6 22:01:32 2015 Pierre Lefebvre
+** Last update Wed May  6 22:05:51 2015 Pierre Lefebvre
 */
 
 int	    	check_maj(char *str, int i)
@@ -21,6 +21,8 @@ int	    	check_maj(char *str, int i)
 	ret = 1;
       check = check + 1;
     }
+  if (check == i && ret == 0)
+    my_putstr("46-46-");
   return (ret);
 }
       
