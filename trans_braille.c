@@ -5,7 +5,7 @@
 ** Login   <lefebv_5@epitech.net>
 ** 
 ** Started on  Wed May  6 19:37:30 2015 Pierre Lefebvre
-** Last update Wed May  6 22:40:35 2015 Hubert Wroblewski
+** Last update Thu May  7 05:56:36 2015 Hubert Wroblewski
 */
 
 #include <unistd.h>
@@ -44,11 +44,31 @@ static char	**read_txt(char *buff, int fd, char **trans_braille)
   return (trans_braille);
 }
 
+static int	check_ext(char *str)
+{
+  int	i;
+
+  while (str[i] != '.' && str[i] != '\0')
+    i++;
+  if (str[i] == '\0')
+    return (-1);
+  else if (str[i] == '.')
+    {
+      if (str[i + 1] == 't' && str[i + 2] == 'x' && str[i + 3] == 't')
+	return (0);
+      else
+	return (-1);
+    }
+  return (-1);
+}
+
 static char	**braille_tab(char **trans_braille, char **av)
 {
   char		buff[1];
   int		fd;
 
+  if (check_ext(av[2]) == -1)
+    return (NULL);
   if ((fd = open(av[2], S_IRUSR)) == -1)
     return (NULL);
   if ((trans_braille = malloc(sizeof(char *) * 128)) == NULL)
